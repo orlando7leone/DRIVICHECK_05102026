@@ -1,0 +1,7 @@
+{
+  "name": "DriveCheck",
+  "description": "DriveCheck - Gestione parco auto, scadenze bollo, assicurazione, revisioni e manutenzione veicoli.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

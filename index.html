@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1420" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="DriveCheck" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/pwa-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/drivecheck_icon.png" />
+    <title>DriveCheck</title>
+    <meta name="description" content="DriveCheck - Gestione parco auto, scadenze bollo, assicurazione, revisioni e manutenzione veicoli." />
+    <meta property="og:title" content="DriveCheck" />
+    <meta property="og:description" content="DriveCheck - Gestione parco auto, scadenze bollo, assicurazione, revisioni e manutenzione veicoli." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Svuota immediatamente la cache del browser e i vecchi Service Worker
+      // per garantire che il PC riceva sempre l'ultimissima grafica aggiornata
+      try {
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (var name of names) {
+              caches.delete(name);
+            }
+          });
+        }
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (var reg of registrations) {
+              reg.unregister();
+            }
+          });
+        }
+      } catch (e) {
+        console.warn('Cache cleanup error:', e);
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
