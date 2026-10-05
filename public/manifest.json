@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "DriveCheck",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "DriveCheck",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "id": "DriveCheck",
+  "lang": "it"
+}
