@@ -19,4 +19,6 @@ body {
   color: #f8fafc;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  padding-bottom: 60px;
+  box-sizing: border-box;
 }
